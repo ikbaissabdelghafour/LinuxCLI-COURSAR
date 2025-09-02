@@ -558,37 +558,116 @@
         <!-- cut section -->
         <div class="command-item">
             <div class="command-header">
-                <div class="command-name">cut</div>
-                <div class="command-type">تقطيع</div>
+            <div class="command-name">cut</div>
+            <div class="command-type">تقطيع</div>
             </div>
             <div class="command-desc">استخراج الأعمدة أو الحقول من النصوص - Extract sections from lines of files</div>
             <div class="command-syntax">cut [OPTIONS] [FILE...]</div>
             <div class="options-section">
-                <div class="options-title">الخيارات المتاحة:</div>
-                <div class="options-grid">
-                    <div class="option-item">
-                        <div class="option-flag">-d</div>
-                        <div class="option-desc">تحديد فاصل الحقول</div>
-                    </div>
-                    <div class="option-item">
-                        <div class="option-flag">-f</div>
-                        <div class="option-desc">تحديد رقم الحقل أو الأعمدة</div>
-                    </div>
-                    <div class="option-item">
-                        <div class="option-flag">-c</div>
-                        <div class="option-desc">تحديد نطاق الأحرف</div>
-                    </div>
-                    <div class="option-item">
-                        <div class="option-flag">--complement</div>
-                        <div class="option-desc">عكس التحديد (إظهار ما لم يتم تحديده)</div>
-                    </div>
+            <div class="options-title">الخيارات المتاحة:</div>
+            <div class="options-grid">
+                <div class="option-item">
+                <div class="option-flag">-d</div>
+                <div class="option-desc">تحديد فاصل الحقول</div>
+                </div>
+                <div class="option-item">
+                <div class="option-flag">-f</div>
+                <div class="option-desc">تحديد رقم الحقل أو الأعمدة</div>
+                </div>
+                <div class="option-item">
+                <div class="option-flag">-c</div>
+                <div class="option-desc">تحديد نطاق الأحرف</div>
+                </div>
+                <div class="option-item">
+                <div class="option-flag">--complement</div>
+                <div class="option-desc">عكس التحديد (إظهار ما لم يتم تحديده)</div>
                 </div>
             </div>
+            </div>
             <div class="examples">
-                <div class="examples-title">أمثلة عملية:</div>
-                <div class="example-item">cut -d: -f1 /etc/passwd</div>
-                <div class="example-item">cut -c1-5 file.txt</div>
-                <div class="example-item">echo "a,b,c" | cut -d, -f2</div>
-                <div class="example-item">cut --complement -c1-3 file.txt</div>
+            <div class="examples-title">أمثلة عملية:</div>
+            <div class="example-item">cut -d: -f1 /etc/passwd</div>
+            <div class="example-item">cut -c1-5 file.txt</div>
+            <div class="example-item">echo "a,b,c" | cut -d, -f2</div>
+            <div class="example-item">cut --complement -c1-3 file.txt</div>
             </div>
         </div>
+
+        <!-- paste section -->
+        <div class="command-item">
+            <div class="command-header">
+            <div class="command-name">paste</div>
+            <div class="command-type">دمج</div>
+            </div>
+            <div class="command-desc">دمج الأسطر من ملفات متعددة جنباً إلى جنب - Merge lines of files horizontally</div>
+            <div class="command-syntax">paste [OPTIONS] [FILE...]</div>
+            <div class="options-section">
+            <div class="options-title">الخيارات المتاحة:</div>
+            <div class="options-grid">
+                <div class="option-item">
+                <div class="option-flag">-d</div>
+                <div class="option-desc">تحديد فاصل الأعمدة (افتراضي: Tab)</div>
+                </div>
+                <div class="option-item">
+                <div class="option-flag">-s</div>
+                <div class="option-desc">دمج جميع الأسطر من كل ملف في سطر واحد</div>
+                </div>
+            </div>
+            </div>
+            <div class="examples">
+            <div class="examples-title">أمثلة عملية:</div>
+            <div class="example-item">paste file1.txt file2.txt</div>
+            <div class="example-item">paste -d, col1.txt col2.txt</div>
+            <div class="example-item">paste -s file.txt</div>
+            </div>
+        </div>
+
+        <!-- join section -->
+        <div class="command-item">
+            <div class="command-header">
+            <div class="command-name">join</div>
+            <div class="command-type">ربط</div>
+            </div>
+            <div class="command-desc">ربط الأسطر من ملفين بناءً على حقل مشترك - Join lines of two files on a common field</div>
+            <div class="command-syntax">join [OPTIONS] FILE1 FILE2</div>
+            <div class="options-section">
+            <div class="options-title">الخيارات المتاحة:</div>
+            <div class="options-grid">
+                <div class="option-item">
+                <div class="option-flag">-1 FIELD</div>
+                <div class="option-desc">تحديد رقم الحقل من الملف الأول للربط</div>
+                </div>
+                <div class="option-item">
+                <div class="option-flag">-2 FIELD</div>
+                <div class="option-desc">تحديد رقم الحقل من الملف الثاني للربط</div>
+                </div>
+                <div class="option-item">
+                <div class="option-flag">-t CHAR</div>
+                <div class="option-desc">تحديد فاصل الحقول (افتراضي: مسافة)</div>
+                </div>
+                <div class="option-item">
+                <div class="option-flag">-o FORMAT</div>
+                <div class="option-desc">تحديد تنسيق الإخراج</div>
+                </div>
+                <div class="option-item">
+                <div class="option-flag">-a FILENUM</div>
+                <div class="option-desc">عرض الأسطر غير المطابقة من ملف معين</div>
+                </div>
+                <div class="option-item">
+                <div class="option-flag">-e STRING</div>
+                <div class="option-desc">استبدال الحقول الفارغة بسلسلة نصية</div>
+                </div>
+            </div>
+            </div>
+            <div class="examples">
+            <div class="examples-title">أمثلة عملية:</div>
+            <div class="example-item">join file1.txt file2.txt</div>
+            <div class="example-item">join -1 2 -2 1 a.txt b.txt</div>
+            <div class="example-item">join -t, data1.csv data2.csv</div>
+            <div class="example-item">join -a 1 file1.txt file2.txt</div>
+            <div class="example-item">join -o 1.1,2.2 file1.txt file2.txt</div>
+            </div>
+        </div>
+        </div>
+    </body>
+    </html></div>
