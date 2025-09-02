@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asstuce chown</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="main-menu">
+              <div class="dropdown">
+            <button class="dropbtn" onclick="window.location.href='index.html'">🏠 Home</button>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">File Viewing & Editing</button>
+            <div class="dropdown-content">
+                <a href="filescli.html#cat">cat</a>
+                <a href="filescli.html#less">less</a>
+                <a href="filescli.html#more">more</a>
+                <a href="filescli.html#head">head</a>
+                <a href="filescli.html#tail">tail</a>
+                <a href="filescli.html#nano">nano</a>
+                <a href="filescli.html#vim">vim</a>
+                <a href="filescli.html#vi">vi</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Permissions & Ownership</button>
+            <div class="dropdown-content">
+                <a href="permissionscli.html#chmod">chmod</a>
+                <a href="permissionscli.html#chown">chown</a>
+                <a href="permissionscli.html#chgrp">chgrp</a>
+                <a href="permissionscli.html#umask">umask</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">User Management</button>
+            <div class="dropdown-content">
+                <a href="userscli.html#whoami">whoami</a>
+                <a href="userscli.html#who">who</a>
+                <a href="userscli.html#id">id</a>
+                <a href="userscli.html#adduser">adduser</a>
+                <a href="userscli.html#passwd">passwd</a>
+                <a href="userscli.html#su">su</a>
+                <a href="userscli.html#sudo">sudo</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">System & Processes</button>
+            <div class="dropdown-content">
+                <a href="systemcli.html#ps">ps</a>
+                <a href="systemcli.html#top">top</a>
+                <a href="systemcli.html#htop">htop</a>
+                <a href="systemcli.html#kill">kill</a>
+                <a href="systemcli.html#killall">killall</a>
+                <a href="systemcli.html#uptime">uptime</a>
+                <a href="systemcli.html#uname">uname -a</a>
+                <a href="systemcli.html#df">df</a>
+                <a href="systemcli.html#du">du</a>
+                <a href="systemcli.html#free">free</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Network</button>
+            <div class="dropdown-content">
+                <a href="networkcli.html#ping">ping</a>
+                <a href="networkcli.html#curl">curl</a>
+                <a href="networkcli.html#wget">wget</a>
+                <a href="networkcli.html#ifconfig">ifconfig</a>
+                <a href="networkcli.html#ipaddr">ip addr</a>
+                <a href="networkcli.html#netstat">netstat</a>
+                <a href="networkcli.html#ssh">ssh</a>
+                <a href="networkcli.html#scp">scp</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Archiving & Compression</button>
+            <div class="dropdown-content">
+                <a href="archivecli.html#tar">tar</a>
+                <a href="archivecli.html#gzip">gzip</a>
+                <a href="archivecli.html#gunzip">gunzip</a>
+                <a href="archivecli.html#zip">zip</a>
+                <a href="archivecli.html#unzip">unzip</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Packages</button>
+            <div class="dropdown-content">
+                <a href="packagecli.html#apt">apt-get / apt</a>
+                <a href="packagecli.html#yum">yum / dnf</a>
+                <a href="packagecli.html#pacman">pacman</a>
+            </div>
+        </div>
+                <div class="dropdown">
+            <button class="dropbtn">Text Processing</button>
+            <div class="dropdown-content">
+                <a href="textcli.html#echo">echo</a>
+                <a href="textcli.html#wc">wc</a>
+                <a href="textcli.html#cut">cut</a>
+                <a href="textcli.html#sort">sort</a>
+                <a href="textcli.html#uniq">uniq</a>
+                <a href="textcli.html#grep">grep</a>
+                <a href="textcli.html#awk">awk</a>
+                <a href="textcli.html#sed">sed</a>
+                <a href="textcli.html#tr">tr</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Other</button>
+            <div class="dropdown-content">
+                <a href="othercli.html#history">history</a>
+                <a href="othercli.html#clear">clear</a>
+                <a href="othercli.html#alias">alias</a>
+                <a href="othercli.html#man">man</a>
+                <a href="othercli.html#info">info</a>
+            </div>
+        </div>
+    </div>
+        <div class="section">
+        <div class="section-title" style="color:#c2185b;">صلاحيات الملفات (File Permissions)</div>
+        <div class="section-content">
+            فـ لينكس الصلاحيات عندها رموز وحساب بالأرقام:
+            <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width:100%; text-align:center;">
+                <thead style="background:#f8bbd0; font-weight:bold;">
+                    <tr>
+                        <td>الرمز</td>
+                        <td>المعنى</td>
+                        <td>القيمة الرقمية</td>
+                        <td>مثال</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>r</code></td>
+                        <td>Read (قراءة)</td>
+                        <td>4</td>
+                        <td>قراءة الملف</td>
+                    </tr>
+                    <tr>
+                        <td><code>w</code></td>
+                        <td>Write (كتابة)</td>
+                        <td>2</td>
+                        <td>تغيير/تعديل الملف</td>
+                    </tr>
+                    <tr>
+                        <td><code>x</code></td>
+                        <td>Execute (تنفيذ)</td>
+                        <td>1</td>
+                        <td>تشغيل الملف (سكربت/برنامج)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <b>طريقة الحساب:</b><br>
+            كل صلاحية عندها رقم، وكنجمعو الأرقام باش نحددو الصلاحيات.<br>
+            <ul>
+                <li><code>7</code> = 4+2+1 = <b>rwx</b> (قراءة + كتابة + تنفيذ)</li>
+                <li><code>6</code> = 4+2 = <b>rw-</b> (قراءة + كتابة)</li>
+                <li><code>5</code> = 4+1 = <b>r-x</b> (قراءة + تنفيذ)</li>
+                <li><code>4</code> = <b>r--</b> (قراءة فقط)</li>
+                <li><code>0</code> = <b>---</b> (لا صلاحيات)</li>
+            </ul>
+            <br>
+            <b>أمثلة عملية:</b>
+            <ul>
+                <li><code>chmod 777 file.txt</code> → كلشي عندو <b>rwx</b> (full access)</li>
+                <li><code>chmod 644 file.txt</code> → المالك <b>rw-</b>، الباقي <b>r--</b></li>
+                <li><code>chmod 755 script.sh</code> → المالك <b>rwx</b>، الباقي <b>r-x</b></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

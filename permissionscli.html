@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<!-- تحديد الترميز -->
 <meta charset="UTF-8">
-<!-- التحكم فالعرض فالموبايل -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>أوامر الصلاحيات و المِلكية - Linux</title>
-  <link rel="stylesheet" href="style.css">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أوامر الصلاحيات و المِلكية - Linux</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <div class="main-menu">
-        <div class="dropdown">
+              <div class="dropdown">
             <button class="dropbtn" onclick="window.location.href='index.html'">🏠 Home</button>
         </div>
         <div class="dropdown">
@@ -93,7 +92,7 @@
                 <a href="packagecli.html#pacman">pacman</a>
             </div>
         </div>
-         <div class="dropdown">
+                <div class="dropdown">
             <button class="dropbtn">Text Processing</button>
             <div class="dropdown-content">
                 <a href="textcli.html#echo">echo</a>
@@ -136,7 +135,7 @@
                 <div class="options-grid">
                     <div class="option-item">
                         <div class="option-flag">-R</div>
-                        <div class="option-desc">تغيير الصلاحيات بشكل递归 للمجلدات الفرعية</div>
+                        <div class="option-desc">تغيير الصلاحيات بشكل متكرر (Recursive) للمجلدات الفرعية</div>
                     </div>
                     <div class="option-item">
                         <div class="option-flag">--reference=FILE</div>
@@ -164,7 +163,7 @@
                 <div class="options-grid">
                     <div class="option-item">
                         <div class="option-flag">-R</div>
-                        <div class="option-desc">تغيير المالك بشكل递归 للمجلدات الفرعية</div>
+                        <div class="option-desc">تغيير المالك بشكل متكرر (Recursive) للمجلدات الفرعية</div>
                     </div>
                     <div class="option-item">
                         <div class="option-flag">--reference=FILE</div>
@@ -192,7 +191,7 @@
                 <div class="options-grid">
                     <div class="option-item">
                         <div class="option-flag">-R</div>
-                        <div class="option-desc">تغيير المجموعة بشكل递归 للمجلدات الفرعية</div>
+                        <div class="option-desc">تغيير المجموعة بشكل متكرر (Recursive) للمجلدات الفرعية</div>
                     </div>
                     <div class="option-item">
                         <div class="option-flag">--reference=FILE</div>
@@ -220,8 +219,61 @@
                 <div class="example-item">umask 022</div>
             </div>
         </div>
+
+        <!-- New Permissions Table Section -->
+        <div class="command-item" id="permissions-table">
+            <div class="command-header">
+                <div class="command-name">صلاحيات الملفات</div>
+                <div class="command-type">Permissions Table</div>
+            </div>
+            <div class="command-desc">شرح رموز وأرقام الصلاحيات (r, w, x) وكيفية حسابها</div>
+            <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width:100%; text-align:center;">
+                <thead style="background:#05031d; font-weight:bold;">
+                    <tr>
+                        <td>الرمز</td>
+                        <td>المعنى</td>
+                        <td>القيمة الرقمية</td>
+                        <td>مثال</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>r</code></td>
+                        <td>Read (قراءة)</td>
+                        <td>4</td>
+                        <td>قراءة الملف</td>
+                    </tr>
+                    <tr>
+                        <td><code>w</code></td>
+                        <td>Write (كتابة)</td>
+                        <td>2</td>
+                        <td>تعديل/حذف الملف</td>
+                    </tr>
+                    <tr>
+                        <td><code>x</code></td>
+                        <td>Execute (تنفيذ)</td>
+                        <td>1</td>
+                        <td>تشغيل الملف كسكربت/برنامج</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <b>أرقام شائعة:</b>
+            <ul>
+                <li><code>7</code> = rwx (قراءة + كتابة + تنفيذ)</li>
+                <li><code>6</code> = rw- (قراءة + كتابة)</li>
+                <li><code>5</code> = r-x (قراءة + تنفيذ)</li>
+                <li><code>4</code> = r-- (قراءة فقط)</li>
+                <li><code>0</code> = --- (لا صلاحيات)</li>
+            </ul>
+            <b>أمثلة:</b>
+            <div class="example-item">chmod 777 file.txt → جميع المستخدمين عندهم rwx</div>
+            <div class="example-item">chmod 644 file.txt → المالك rw-، الباقي r--</div>
+            <div class="example-item">chmod 755 script.sh → المالك rwx، الباقي r-x</div>
+        </div>
     </div>
-     <!-- Scroll Up Button -->
+
+    <!-- Scroll Up Button -->
     <button id="scrollUpBtn" title="Scroll to top">↑</button>
  
     <script>

@@ -270,6 +270,102 @@
             </ul>
         </div>
     </div>
+        <!-- CLI Symbols Section -->
+    <div class="section">
+        <div class="section-title" style="color:#009688;">الرموز في سطر الأوامر (CLI Symbols)</div>
+        <div class="section-content">
+            <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width:100%; text-align:center;">
+                <thead style="background:#010e0d; font-weight:bold;">
+                    <tr>
+                        <td>الرمز</td>
+                        <td>الاسم / النوع</td>
+                        <td>الوظيفة</td>
+                        <td>مثال</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>|</code></td>
+                        <td>Pipe</td>
+                        <td>يمرر المخرجات ديال أمر كمدخل لأمر آخر</td>
+                        <td><code>ls | grep txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&&</code></td>
+                        <td>AND</td>
+                        <td>ينفذ الأمر الثاني غير إذا نجح الأول</td>
+                        <td><code>mkdir test && cd test</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>||</code></td>
+                        <td>OR</td>
+                        <td>ينفذ الأمر الثاني غير إذا فشل الأول</td>
+                        <td><code>cd folder || echo "ما كاينش"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&</code></td>
+                        <td>Background</td>
+                        <td>يشغل الأمر فـ الخلفية</td>
+                        <td><code>ping google.com &</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>;</code></td>
+                        <td>Separator</td>
+                        <td>ينفذ عدة أوامر بالتتابع</td>
+                        <td><code>cd /; ls; pwd</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&gt;</code></td>
+                        <td>Redirect (Write)</td>
+                        <td>يكتب المخرجات فـ ملف (يمسح القديم)</td>
+                        <td><code>ls &gt; files.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&gt;&gt;</code></td>
+                        <td>Redirect (Append)</td>
+                        <td>يزيد المخرجات لآخر الملف</td>
+                        <td><code>echo "test" &gt;&gt; log.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>2&gt;</code></td>
+                        <td>Redirect Errors</td>
+                        <td>يحفظ الأخطاء فـ ملف</td>
+                        <td><code>ls notfound 2&gt; errors.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>*</code></td>
+                        <td>Wildcard</td>
+                        <td>يعني أي عدد من الحروف</td>
+                        <td><code>ls *.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>?</code></td>
+                        <td>Wildcard</td>
+                        <td>يعني أي حرف واحد</td>
+                        <td><code>ls file?.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>~</code></td>
+                        <td>Home</td>
+                        <td>يشير للمجلد الشخصي</td>
+                        <td><code>cd ~</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>.</code></td>
+                        <td>Current Directory</td>
+                        <td>المجلد الحالي</td>
+                        <td><code>./script.sh</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>..</code></td>
+                        <td>Parent Directory</td>
+                        <td>المجلد الأعلى</td>
+                        <td><code>cd ..</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <div class="container">  
         <div class="section">

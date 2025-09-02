@@ -422,3 +422,10 @@
             .main-menu { flex-wrap: wrap; height: auto; }
             .hero-text-anim { font-size: 1.2rem; }
         }
+        ul li {
+            margin-bottom: 8px;
+            list-style-type: square;
+            margin-right: 12px;
+            
+        }
+        
