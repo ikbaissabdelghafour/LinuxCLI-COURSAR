@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- ...existing code from filescli.html <head>... -->
+    <title>أوامر الصلاحيات و المِلكية - Linux</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="main-menu">
+        <div class="dropdown">
+            <button class="dropbtn" onclick="window.location.href='index.html'">🏠 Home</button>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">File Viewing & Editing</button>
+            <div class="dropdown-content">
+                <a href="filescli.html#cat">cat</a>
+                <a href="filescli.html#less">less</a>
+                <a href="filescli.html#more">more</a>
+                <a href="filescli.html#head">head</a>
+                <a href="filescli.html#tail">tail</a>
+                <a href="filescli.html#nano">nano</a>
+                <a href="filescli.html#vim">vim</a>
+                <a href="filescli.html#vi">vi</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Permissions & Ownership</button>
+            <div class="dropdown-content">
+                <a href="permissionscli.html#chmod">chmod</a>
+                <a href="permissionscli.html#chown">chown</a>
+                <a href="permissionscli.html#chgrp">chgrp</a>
+                <a href="permissionscli.html#umask">umask</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">User Management</button>
+            <div class="dropdown-content">
+                <a href="userscli.html#whoami">whoami</a>
+                <a href="userscli.html#who">who</a>
+                <a href="userscli.html#id">id</a>
+                <a href="userscli.html#adduser">adduser</a>
+                <a href="userscli.html#passwd">passwd</a>
+                <a href="userscli.html#su">su</a>
+                <a href="userscli.html#sudo">sudo</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">System & Processes</button>
+            <div class="dropdown-content">
+                <a href="systemcli.html#ps">ps</a>
+                <a href="systemcli.html#top">top</a>
+                <a href="systemcli.html#htop">htop</a>
+                <a href="systemcli.html#kill">kill</a>
+                <a href="systemcli.html#killall">killall</a>
+                <a href="systemcli.html#uptime">uptime</a>
+                <a href="systemcli.html#uname">uname -a</a>
+                <a href="systemcli.html#df">df</a>
+                <a href="systemcli.html#du">du</a>
+                <a href="systemcli.html#free">free</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Network</button>
+            <div class="dropdown-content">
+                <a href="networkcli.html#ping">ping</a>
+                <a href="networkcli.html#curl">curl</a>
+                <a href="networkcli.html#wget">wget</a>
+                <a href="networkcli.html#ifconfig">ifconfig</a>
+                <a href="networkcli.html#ipaddr">ip addr</a>
+                <a href="networkcli.html#netstat">netstat</a>
+                <a href="networkcli.html#ssh">ssh</a>
+                <a href="networkcli.html#scp">scp</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Archiving & Compression</button>
+            <div class="dropdown-content">
+                <a href="archivecli.html#tar">tar</a>
+                <a href="archivecli.html#gzip">gzip</a>
+                <a href="archivecli.html#gunzip">gunzip</a>
+                <a href="archivecli.html#zip">zip</a>
+                <a href="archivecli.html#unzip">unzip</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Packages</button>
+            <div class="dropdown-content">
+                <a href="packagecli.html#apt">apt-get / apt</a>
+                <a href="packagecli.html#yum">yum / dnf</a>
+                <a href="packagecli.html#pacman">pacman</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Other</button>
+            <div class="dropdown-content">
+                <a href="othercli.html#history">history</a>
+                <a href="othercli.html#clear">clear</a>
+                <a href="othercli.html#alias">alias</a>
+                <a href="othercli.html#man">man</a>
+                <a href="othercli.html#info">info</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 أوامر الصلاحيات و المِلكية</h1>
+            <p>Permissions & Ownership Commands</p>
+        </div>
+
+        <div class="command-item" id="chmod">
+            <div class="command-header">
+                <div class="command-name">chmod</div>
+                <div class="command-type">تغيير الصلاحيات</div>
+            </div>
+            <div class="command-desc">تغيير صلاحيات الملفات أو المجلدات - Change file/directory permissions</div>
+            <div class="command-syntax">chmod [OPTIONS] MODE FILE</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-R</div>
+                        <div class="option-desc">تغيير الصلاحيات بشكل递归 للمجلدات الفرعية</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">--reference=FILE</div>
+                        <div class="option-desc">استخدام صلاحيات ملف آخر كمرجع</div>
+                    </div>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">chmod 755 script.sh</div>
+                <div class="example-item">chmod -R 644 myfolder</div>
+                <div class="example-item">chmod u+x file.sh</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="chown">
+            <div class="command-header">
+                <div class="command-name">chown</div>
+                <div class="command-type">تغيير المالك</div>
+            </div>
+            <div class="command-desc">تغيير مالك الملف أو المجلد - Change file/directory owner</div>
+            <div class="command-syntax">chown [OPTIONS] OWNER[:GROUP] FILE</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-R</div>
+                        <div class="option-desc">تغيير المالك بشكل递归 للمجلدات الفرعية</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">--reference=FILE</div>
+                        <div class="option-desc">استخدام مالك ملف آخر كمرجع</div>
+                    </div>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">chown user file.txt</div>
+                <div class="example-item">chown user:group file.txt</div>
+                <div class="example-item">chown -R user myfolder</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="chgrp">
+            <div class="command-header">
+                <div class="command-name">chgrp</div>
+                <div class="command-type">تغيير المجموعة</div>
+            </div>
+            <div class="command-desc">تغيير مجموعة الملف أو المجلد - Change file/directory group</div>
+            <div class="command-syntax">chgrp [OPTIONS] GROUP FILE</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-R</div>
+                        <div class="option-desc">تغيير المجموعة بشكل递归 للمجلدات الفرعية</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">--reference=FILE</div>
+                        <div class="option-desc">استخدام مجموعة ملف آخر كمرجع</div>
+                    </div>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">chgrp staff file.txt</div>
+                <div class="example-item">chgrp -R users myfolder</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="umask">
+            <div class="command-header">
+                <div class="command-name">umask</div>
+                <div class="command-type">إعداد الصلاحيات الافتراضية</div>
+            </div>
+            <div class="command-desc">تعيين الصلاحيات الافتراضية للملفات الجديدة - Set default permissions for new files</div>
+            <div class="command-syntax">umask [VALUE]</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">umask</div>
+                <div class="example-item">umask 022</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

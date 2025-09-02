@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أوامر التعامل مع النصوص - Linux</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-menu">
+        <div class="dropdown">
+            <button class="dropbtn" onclick="window.location.href='index.html'">🏠 Home</button>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">File Viewing & Editing</button>
+            <div class="dropdown-content">
+                <a href="filescli.html#cat">cat</a>
+                <a href="filescli.html#less">less</a>
+                <a href="filescli.html#more">more</a>
+                <a href="filescli.html#head">head</a>
+                <a href="filescli.html#tail">tail</a>
+                <a href="filescli.html#nano">nano</a>
+                <a href="filescli.html#vim">vim</a>
+                <a href="filescli.html#vi">vi</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Permissions & Ownership</button>
+            <div class="dropdown-content">
+                <a href="permissionscli.html#chmod">chmod</a>
+                <a href="permissionscli.html#chown">chown</a>
+                <a href="permissionscli.html#chgrp">chgrp</a>
+                <a href="permissionscli.html#umask">umask</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">User Management</button>
+            <div class="dropdown-content">
+                <a href="userscli.html#whoami">whoami</a>
+                <a href="userscli.html#who">who</a>
+                <a href="userscli.html#id">id</a>
+                <a href="userscli.html#adduser">adduser</a>
+                <a href="userscli.html#passwd">passwd</a>
+                <a href="userscli.html#su">su</a>
+                <a href="userscli.html#sudo">sudo</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">System & Processes</button>
+            <div class="dropdown-content">
+                <a href="systemcli.html#ps">ps</a>
+                <a href="systemcli.html#top">top</a>
+                <a href="systemcli.html#htop">htop</a>
+                <a href="systemcli.html#kill">kill</a>
+                <a href="systemcli.html#killall">killall</a>
+                <a href="systemcli.html#uptime">uptime</a>
+                <a href="systemcli.html#uname">uname -a</a>
+                <a href="systemcli.html#df">df</a>
+                <a href="systemcli.html#du">du</a>
+                <a href="systemcli.html#free">free</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Network</button>
+            <div class="dropdown-content">
+                <a href="networkcli.html#ping">ping</a>
+                <a href="networkcli.html#curl">curl</a>
+                <a href="networkcli.html#wget">wget</a>
+                <a href="networkcli.html#ifconfig">ifconfig</a>
+                <a href="networkcli.html#ipaddr">ip addr</a>
+                <a href="networkcli.html#netstat">netstat</a>
+                <a href="networkcli.html#ssh">ssh</a>
+                <a href="networkcli.html#scp">scp</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Archiving & Compression</button>
+            <div class="dropdown-content">
+                <a href="archivecli.html#tar">tar</a>
+                <a href="archivecli.html#gzip">gzip</a>
+                <a href="archivecli.html#gunzip">gunzip</a>
+                <a href="archivecli.html#zip">zip</a>
+                <a href="archivecli.html#unzip">unzip</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Packages</button>
+            <div class="dropdown-content">
+                <a href="packagecli.html#apt">apt-get / apt</a>
+                <a href="packagecli.html#yum">yum / dnf</a>
+                <a href="packagecli.html#pacman">pacman</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Other</button>
+            <div class="dropdown-content">
+                <a href="othercli.html#history">history</a>
+                <a href="othercli.html#clear">clear</a>
+                <a href="othercli.html#alias">alias</a>
+                <a href="othercli.html#man">man</a>
+                <a href="othercli.html#info">info</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>🔤 أوامر التعامل مع النصوص</h1>
+            <p>Text Processing & Manipulation Commands</p>
+        </div>
+
+        <div class="command-item">
+            <div class="command-header">
+                <div class="command-name">echo</div>
+                <div class="command-type">طباعة</div>
+            </div>
+            <div class="command-desc">طباعة النص على الشاشة أو إلى ملف - Display text output</div>
+            <div class="command-syntax">echo [OPTIONS] [STRING...]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-n</div>
+                        <div class="option-desc">عدم إضافة سطر جديد في النهاية</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-e</div>
+                        <div class="option-desc">تفسير رموز الهروب مثل \n, \t</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-E</div>
+                        <div class="option-desc">عدم تفسير رموز الهروب (افتراضي)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="regex-info">
+                <div class="regex-title">رموز الهروب الشائعة:</div>
+                <div class="regex-item">
+                    <span class="regex-pattern">\n</span>
+                    <span>سطر جديد</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">\t</span>
+                    <span>تبويب</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">\\</span>
+                    <span>شرطة مائلة عكسية</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">\a</span>
+                    <span>جرس تنبيه</span>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">echo "Hello World"</div>
+                <div class="example-item">echo -e "Line 1\nLine 2\tTabbed"</div>
+                <div class="example-item">echo -n "No newline"</div>
+                <div class="example-item">echo $USER $HOME</div>
+                <div class="example-item">echo "Today is $(date)" > today.txt</div>
+            </div>
+        </div>
+
+        <div class="command-item">
+            <div class="command-header">
+                <div class="command-name">grep</div>
+                <div class="command-type">بحث</div>
+            </div>
+            <div class="command-desc">البحث عن النصوص في الملفات باستخدام التعبيرات النمطية - Search text patterns in files</div>
+            <div class="command-syntax">grep [OPTIONS] PATTERN [FILE...]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-i</div>
+                        <div class="option-desc">تجاهل حالة الأحرف (كبيرة/صغيرة)</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-v</div>
+                        <div class="option-desc">عكس البحث (إظهار الأسطر التي لا تطابق)</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-n</div>
+                        <div class="option-desc">عرض أرقام الأسطر</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-c</div>
+                        <div class="option-desc">عدد الأسطر المطابقة فقط</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-l</div>
+                        <div class="option-desc">أسماء الملفات التي تحتوي على النمط</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-r</div>
+                        <div class="option-desc">البحث في المجلدات بشكل تعاودي</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-A NUM</div>
+                        <div class="option-desc">عرض NUM أسطر بعد المطابقة</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-B NUM</div>
+                        <div class="option-desc">عرض NUM أسطر قبل المطابقة</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-C NUM</div>
+                        <div class="option-desc">عرض NUM أسطر قبل وبعد المطابقة</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-E</div>
+                        <div class="option-desc">استخدام التعبيرات النمطية الموسعة</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-F</div>
+                        <div class="option-desc">البحث عن نص ثابت (بدون regex)</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">--color</div>
+                        <div class="option-desc">تلوين النتائج المطابقة</div>
+                    </div>
+                </div>
+            </div>
+            <div class="regex-info">
+                <div class="regex-title">أنماط التعبيرات النمطية الشائعة:</div>
+                <div class="regex-item">
+                    <span class="regex-pattern">^pattern</span>
+                    <span>النمط في بداية السطر</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">pattern$</span>
+                    <span>النمط في نهاية السطر</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">.</span>
+                    <span>أي حرف واحد</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">*</span>
+                    <span>تكرار صفر أو أكثر</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">[abc]</span>
+                    <span>أي حرف من a أو b أو c</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">[0-9]</span>
+                    <span>أي رقم</span>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">grep -i "error" /var/log/syslog</div>
+                <div class="example-item">grep -n "function" *.py</div>
+                <div class="example-item">grep -r "TODO" /home/user/project/</div>
+                <div class="example-item">grep -v "^#" config.conf</div>
+                <div class="example-item">grep -E "^[0-9]+$" numbers.txt</div>
+            </div>
+        </div>
+
+        <div class="command-item">
+            <div class="command-header">
+                <div class="command-name">sed</div>
+                <div class="command-type">تعديل</div>
+            </div>
+            <div class="command-desc">محرر تيار للتعديل المتقدم للنصوص - Stream editor for text manipulation</div>
+            <div class="command-syntax">sed [OPTIONS] 'SCRIPT' [FILE...]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-e</div>
+                        <div class="option-desc">إضافة أوامر إلى النص البرمجي</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-i</div>
+                        <div class="option-desc">تعديل الملف في مكانه</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-n</div>
+                        <div class="option-desc">منع الطباعة التلقائية</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-r</div>
+                        <div class="option-desc">استخدام التعبيرات النمطية الموسعة</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-f</div>
+                        <div class="option-desc">قراءة النص البرمجي من ملف</div>
+                    </div>
+                </div>
+            </div>
+            <div class="regex-info">
+                <div class="regex-title">الأوامر الأساسية في sed:</div>
+                <div class="regex-item">
+                    <span class="regex-pattern">s/old/new/</span>
+                    <span>استبدال النص</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">d</span>
+                    <span>حذف السطر</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">p</span>
+                    <span>طباعة السطر</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">i\text</span>
+                    <span>إدراج نص قبل السطر</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">a\text</span>
+                    <span>إضافة نص بعد السطر</span>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">sed 's/old/new/g' file.txt</div>
+                <div class="example-item">sed -i 's/localhost/127.0.0.1/g' config.conf</div>
+                <div class="example-item">sed '1,5d' file.txt</div>
+                <div class="example-item">sed -n '10,20p' large_file.txt</div>
+                <div class="example-item">sed '/pattern/d' input.txt</div>
+            </div>
+        </div>
+
+        <div class="command-item">
+            <div class="command-header">
+                <div class="command-name">awk</div>
+                <div class="command-type">معالجة</div>
+            </div>
+            <div class="command-desc">معالجة متقدمة للنصوص والأعمدة - Advanced text and column processing</div>
+            <div class="command-syntax">awk [OPTIONS] 'PROGRAM' [FILE...]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-F</div>
+                        <div class="option-desc">تحديد فاصل الحقول</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-v</div>
+                        <div class="option-desc">تعيين متغيرات</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-f</div>
+                        <div class="option-desc">قراءة البرنامج من ملف</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-W</div>
+                        <div class="option-desc">تفعيل التحذيرات</div>
+                    </div>
+                </div>
+            </div>
+            <div class="regex-info">
+                <div class="regex-title">المتغيرات المدمجة في awk:</div>
+                <div class="regex-item">
+                    <span class="regex-pattern">$0</span>
+                    <span>السطر كاملاً</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">$1, $2, $3</span>
+                    <span>الحقول الأول والثاني والثالث</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">NF</span>
+                    <span>عدد الحقول في السطر</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">NR</span>
+                    <span>رقم السطر الحالي</span>
+                </div>
+                <div class="regex-item">
+                    <span class="regex-pattern">FS</span>
+                    <span>فاصل الحقول</span>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">awk '{print $1, $3}' data.txt</div>
+                <div class="example-item">awk -F: '{print $1}' /etc/passwd</div>
+                <div class="example-item">awk 'NR>1 {sum+=$2} END {print sum}' numbers.txt</div>
+                <div class="example-item">awk '/pattern/ {print NR, $0}' file.txt</div>
+                <div class="example-item">awk 'length($0) > 80' long_lines.txt</div>
+            </div>
+        </div>
+
+        <div class="command-item">
+            <div class="command-header">
+                <div class="command-name">sort</div>
+                <div class="command-type">ترتيب</div>
+            </div>
+            <div class="command-desc">ترتيب الأسطر أبجدياً أو رقمياً - Sort lines of text</div>
+            <div class="command-syntax">sort [OPTIONS] [FILE...]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-r</div>
+                        <div class="option-desc">ترتيب عكسي</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-n</div>
+                        <div class="option-desc">ترتيب رقمي</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-k</div>
+                        <div class="option-desc">ترتيب حسب عمود معين</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-t</div>
+                        <div class="option-desc">تحديد فاصل الحقول</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-u</div>
+                        <div class="option-desc">حذف الأسطر المتكررة</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-f</div>
+                        <div class="option-desc">تجاهل حالة الأحرف</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-h</div>
+                        <div class="option-desc">ترتيب الأحجام (1K, 2M, 3G)</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-R</div>
+                        <div class="option-desc">ترتيب عشوائي</div>
+                    </div>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">sort names.txt</div>
+                <div class="example-item">sort -n -r numbers.txt</div>
+                <div class="example-item">sort -k2 -t: /etc/passwd</div>
+                <div class="example-item">sort -u duplicate_lines.txt</div>
+                <div class="example-item">ls -la | sort -k5 -h</div>
+            </div>
+        </div>
+
+        <div class="command-item">
+            <div class="command-header">
+                <div class="command-name">uniq</div>
+                <div class="command-type">تنظيف</div>
+            </div>
+            <div class="command-desc">إزالة أو عرض الأسطر المتكررة - Remove or report duplicate lines</div>
+            <div class="command-syntax">uniq [OPTIONS] [INPUT [OUTPUT]]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-c</div>
+                        <div class="option-desc">عرض عدد التكرارات</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-d</div>
+                        <div class="option-desc">عرض الأسطر المتكررة فقط</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-u</div>
+                        <div class="option-desc">عرض الأسطر الفريدة فقط</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-i</div>
+                        <div class="option-desc">تجاهل حالة الأحرف</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-f</div>
+                        <div class="option-desc">تجاهل عدد من الحقول الأولى</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-s</div>
+                        <div class="option-desc">تجاهل عدد من الأحرف الأولى</div>
+                    </div>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">sort data.txt | uniq</div>
+                <div class="example-item">sort names.txt | uniq -c</div>
+                <div class="example-item">sort logs.txt | uniq -d</div>
+                <div class="example-item">uniq -i mixed_case.txt</div>
+            </div>
+        </div>
+
+        <!-- tr section -->
+        <div class="command-item">
+            <div class="command-header">
+                <div class="command-name">tr</div>
+                <div class="command-type">تحويل</div>
+            </div>
+            <div class="command-desc">تحويل أو حذف الأحرف من الإدخال - Translate or delete characters</div>
+            <div class="command-syntax">tr [OPTIONS] SET1 [SET2]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-d</div>
+                        <div class="option-desc">حذف الأحرف الموجودة في SET1</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-s</div>
+                        <div class="option-desc">استبدال التكرارات المتتالية بحرف واحد</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-c</div>
+                        <div class="option-desc">عكس مجموعة الأحرف</div>
+                    </div>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">echo "linux" | tr 'a-z' 'A-Z'</div>
+                <div class="example-item">echo "122333" | tr -s '3'</div>
+                <div class="example-item">echo "hello 123" | tr -d '0-9'</div>
+                <div class="example-item">echo "abc" | tr -c 'a-c' '_'</div>
+            </div>
+        </div>
+
+        <!-- wc section -->
+        <div class="command-item">
+            <div class="command-header">
+                <div class="command-name">wc</div>
+                <div class="command-type">إحصاء</div>
+            </div>
+            <div class="command-desc">عد الكلمات أو الأسطر أو الأحرف في الملفات - Count lines, words, or bytes</div>
+            <div class="command-syntax">wc [OPTIONS] [FILE...]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-l</div>
+                        <div class="option-desc">عد الأسطر فقط</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-w</div>
+                        <div class="option-desc">عد الكلمات فقط</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-c</div>
+                        <div class="option-desc">عد البايتات فقط</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-m</div>
+                        <div class="option-desc">عد الأحرف فقط</div>
+                    </div>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">wc file.txt</div>
+                <div class="example-item">wc -l file.txt</div>
+                <div class="example-item">wc -w *.txt</div>
+                <div class="example-item">cat file.txt | wc -m</div>
+            </div>
+        </div>
+
+        <!-- cut section -->
+        <div class="command-item">
+            <div class="command-header">
+                <div class="command-name">cut</div>
+                <div class="command-type">تقطيع</div>
+            </div>
+            <div class="command-desc">استخراج الأعمدة أو الحقول من النصوص - Extract sections from lines of files</div>
+            <div class="command-syntax">cut [OPTIONS] [FILE...]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-d</div>
+                        <div class="option-desc">تحديد فاصل الحقول</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-f</div>
+                        <div class="option-desc">تحديد رقم الحقل أو الأعمدة</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-c</div>
+                        <div class="option-desc">تحديد نطاق الأحرف</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">--complement</div>
+                        <div class="option-desc">عكس التحديد (إظهار ما لم يتم تحديده)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">cut -d: -f1 /etc/passwd</div>
+                <div class="example-item">cut -c1-5 file.txt</div>
+                <div class="example-item">echo "a,b,c" | cut -d, -f2</div>
+                <div class="example-item">cut --complement -c1-3 file.txt</div>
+            </div>
+        </div>

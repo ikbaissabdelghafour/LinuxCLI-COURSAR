@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أوامر الشبكة - Linux</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-menu">
+        <div class="dropdown">
+            <button class="dropbtn" onclick="window.location.href='index.html'">🏠 Home</button>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">File Viewing & Editing</button>
+            <div class="dropdown-content">
+                <a href="filescli.html#cat">cat</a>
+                <a href="filescli.html#less">less</a>
+                <a href="filescli.html#more">more</a>
+                <a href="filescli.html#head">head</a>
+                <a href="filescli.html#tail">tail</a>
+                <a href="filescli.html#nano">nano</a>
+                <a href="filescli.html#vim">vim</a>
+                <a href="filescli.html#vi">vi</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Permissions & Ownership</button>
+            <div class="dropdown-content">
+                <a href="permissionscli.html#chmod">chmod</a>
+                <a href="permissionscli.html#chown">chown</a>
+                <a href="permissionscli.html#chgrp">chgrp</a>
+                <a href="permissionscli.html#umask">umask</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">User Management</button>
+            <div class="dropdown-content">
+                <a href="userscli.html#whoami">whoami</a>
+                <a href="userscli.html#who">who</a>
+                <a href="userscli.html#id">id</a>
+                <a href="userscli.html#adduser">adduser</a>
+                <a href="userscli.html#passwd">passwd</a>
+                <a href="userscli.html#su">su</a>
+                <a href="userscli.html#sudo">sudo</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">System & Processes</button>
+            <div class="dropdown-content">
+                <a href="systemcli.html#ps">ps</a>
+                <a href="systemcli.html#top">top</a>
+                <a href="systemcli.html#htop">htop</a>
+                <a href="systemcli.html#kill">kill</a>
+                <a href="systemcli.html#killall">killall</a>
+                <a href="systemcli.html#uptime">uptime</a>
+                <a href="systemcli.html#uname">uname -a</a>
+                <a href="systemcli.html#df">df</a>
+                <a href="systemcli.html#du">du</a>
+                <a href="systemcli.html#free">free</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Network</button>
+            <div class="dropdown-content">
+                <a href="networkcli.html#ping">ping</a>
+                <a href="networkcli.html#curl">curl</a>
+                <a href="networkcli.html#wget">wget</a>
+                <a href="networkcli.html#ifconfig">ifconfig</a>
+                <a href="networkcli.html#ipaddr">ip addr</a>
+                <a href="networkcli.html#netstat">netstat</a>
+                <a href="networkcli.html#ssh">ssh</a>
+                <a href="networkcli.html#scp">scp</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Archiving & Compression</button>
+            <div class="dropdown-content">
+                <a href="archivecli.html#tar">tar</a>
+                <a href="archivecli.html#gzip">gzip</a>
+                <a href="archivecli.html#gunzip">gunzip</a>
+                <a href="archivecli.html#zip">zip</a>
+                <a href="archivecli.html#unzip">unzip</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Packages</button>
+            <div class="dropdown-content">
+                <a href="packagecli.html#apt">apt-get / apt</a>
+                <a href="packagecli.html#yum">yum / dnf</a>
+                <a href="packagecli.html#pacman">pacman</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Other</button>
+            <div class="dropdown-content">
+                <a href="othercli.html#history">history</a>
+                <a href="othercli.html#clear">clear</a>
+                <a href="othercli.html#alias">alias</a>
+                <a href="othercli.html#man">man</a>
+                <a href="othercli.html#info">info</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>🌐 أوامر الشبكة</h1>
+            <p>Network Commands</p>
+        </div>
+
+        <div class="command-item" id="ping">
+            <div class="command-header">
+                <div class="command-name">ping</div>
+                <div class="command-type">اختبار</div>
+            </div>
+            <div class="command-desc">اختبار الاتصال بمضيف - Test connectivity to a host</div>
+            <div class="command-syntax">ping [OPTIONS] HOST</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">ping google.com</div>
+                <div class="example-item">ping -c 4 8.8.8.8</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="curl">
+            <div class="command-header">
+                <div class="command-name">curl</div>
+                <div class="command-type">جلب بيانات</div>
+            </div>
+            <div class="command-desc">جلب بيانات من عنوان URL - Fetch data from URL</div>
+            <div class="command-syntax">curl [OPTIONS] URL</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">curl https://example.com</div>
+                <div class="example-item">curl -I https://example.com</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="wget">
+            <div class="command-header">
+                <div class="command-name">wget</div>
+                <div class="command-type">تحميل</div>
+            </div>
+            <div class="command-desc">تحميل ملفات من الإنترنت - Download files from the internet</div>
+            <div class="command-syntax">wget [OPTIONS] URL</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">wget https://example.com/file.zip</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="ifconfig">
+            <div class="command-header">
+                <div class="command-name">ifconfig</div>
+                <div class="command-type">معلومات</div>
+            </div>
+            <div class="command-desc">عرض إعدادات الشبكة (قديم) - Show network configuration (legacy)</div>
+            <div class="command-syntax">ifconfig</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">ifconfig</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="ipaddr">
+            <div class="command-header">
+                <div class="command-name">ip addr</div>
+                <div class="command-type">معلومات</div>
+            </div>
+            <div class="command-desc">عرض إعدادات الشبكة (حديث) - Show network configuration (modern)</div>
+            <div class="command-syntax">ip addr</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">ip addr</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="netstat">
+            <div class="command-header">
+                <div class="command-name">netstat</div>
+                <div class="command-type">مراقبة</div>
+            </div>
+            <div class="command-desc">مراقبة المنافذ والاتصالات - Monitor ports and connections</div>
+            <div class="command-syntax">netstat [OPTIONS]</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">netstat -tuln</div>
+                <div class="example-item">netstat -anp</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="ssh">
+            <div class="command-header">
+                <div class="command-name">ssh</div>
+                <div class="command-type">اتصال</div>
+            </div>
+            <div class="command-desc">الاتصال بسيرفر آخر عبر SSH - Connect to another server via SSH</div>
+            <div class="command-syntax">ssh [USER@]HOST</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">ssh user@192.168.1.10</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="scp">
+            <div class="command-header">
+                <div class="command-name">scp</div>
+                <div class="command-type">نقل ملفات</div>
+            </div>
+            <div class="command-desc">نقل الملفات عبر SSH - Copy files over SSH</div>
+            <div class="command-syntax">scp [OPTIONS] SRC DEST</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">scp file.txt user@host:/path/</div>
+                <div class="example-item">scp -r folder user@host:/path/</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

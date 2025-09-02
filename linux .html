@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Commands Complete Reference Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-menu">
+        <div class="dropdown">
+            
+            <button class="dropbtn">File Viewing & Editing</button>
+            <div class="dropdown-content">
+                <a href="filescli.html#cat">cat</a>
+                <a href="filescli.html#less">less</a>
+                <a href="filescli.html#more">more</a>
+                <a href="filescli.html#head">head</a>
+                <a href="filescli.html#tail">tail</a>
+                <a href="filescli.html#nano">nano</a>
+                <a href="filescli.html#vim">vim</a>
+                <a href="filescli.html#vi">vi</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Permissions & Ownership</button>
+            <div class="dropdown-content">
+                <a href="permissionscli.html#chmod">chmod</a>
+                <a href="permissionscli.html#chown">chown</a>
+                <a href="permissionscli.html#chgrp">chgrp</a>
+                <a href="permissionscli.html#umask">umask</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">User Management</button>
+            <div class="dropdown-content">
+                <a href="userscli.html#whoami">whoami</a>
+                <a href="userscli.html#who">who</a>
+                <a href="userscli.html#id">id</a>
+                <a href="userscli.html#adduser">adduser</a>
+                <a href="userscli.html#passwd">passwd</a>
+                <a href="userscli.html#su">su</a>
+                <a href="userscli.html#sudo">sudo</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">System & Processes</button>
+            <div class="dropdown-content">
+                <a href="systemcli.html#ps">ps</a>
+                <a href="systemcli.html#top">top</a>
+                <a href="systemcli.html#htop">htop</a>
+                <a href="systemcli.html#kill">kill</a>
+                <a href="systemcli.html#killall">killall</a>
+                <a href="systemcli.html#uptime">uptime</a>
+                <a href="systemcli.html#uname">uname -a</a>
+                <a href="systemcli.html#df">df</a>
+                <a href="systemcli.html#du">du</a>
+                <a href="systemcli.html#free">free</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Network</button>
+            <div class="dropdown-content">
+                <a href="networkcli.html#ping">ping</a>
+                <a href="networkcli.html#curl">curl</a>
+                <a href="networkcli.html#wget">wget</a>
+                <a href="networkcli.html#ifconfig">ifconfig</a>
+                <a href="networkcli.html#ipaddr">ip addr</a>
+                <a href="networkcli.html#netstat">netstat</a>
+                <a href="networkcli.html#ssh">ssh</a>
+                <a href="networkcli.html#scp">scp</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Archiving & Compression</button>
+            <div class="dropdown-content">
+                <a href="archivecli.html#tar">tar</a>
+                <a href="archivecli.html#gzip">gzip</a>
+                <a href="archivecli.html#gunzip">gunzip</a>
+                <a href="archivecli.html#zip">zip</a>
+                <a href="archivecli.html#unzip">unzip</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Packages</button>
+            <div class="dropdown-content">
+                <a href="packagecli.html#apt">apt-get / apt</a>
+                <a href="packagecli.html#yum">yum / dnf</a>
+                <a href="packagecli.html#pacman">pacman</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Other</button>
+            <div class="dropdown-content">
+                <a href="othercli.html#history">history</a>
+                <a href="othercli.html#clear">clear</a>
+                <a href="othercli.html#alias">alias</a>
+                <a href="othercli.html#man">man</a>
+                <a href="othercli.html#info">info</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>🐧 Linux Commands Complete Reference Guide</h1>
+            <h2 style="color: #81c784; font-size: 1.5rem; margin-top: 10px;">Author Abdelghafour Ikbaiss</h2>
+            <p>The most commonly used Linux commands with detailed explanations</p>
+            <p style="color: #90a4ae;">الأوامر الأكثر استعمالاً في نظام Linux مع الشرح المفصل</p>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">📁</span>
+                أوامر إدارة الملفات والمجلدات
+            </h2>
+            <div class="commands-grid">
+                <div class="command-item" id="ls">
+                    <div class="command-name">ls</div>
+                    <div class="command-desc">عرض الملفات والمجلدات في المجلد الحالي</div>
+                </div>
+                <div class="command-item" id="ls-l">
+                    <div class="command-name">ls -l</div>
+                    <div class="command-desc">عرض الملفات بالتفاصيل (الصلاحيات، الحجم، التاريخ)</div>
+                </div>
+                <div class="command-item" id="ls-a">
+                    <div class="command-name">ls -a</div>
+                    <div class="command-desc">عرض جميع الملفات حتى المخفية</div>
+                </div>
+                <div class="command-item" id="cd">
+                    <div class="command-name">cd</div>
+                    <div class="command-desc">التنقل بين المجلدات</div>
+                </div>
+                <div class="command-item" id="pwd">
+                    <div class="command-name">pwd</div>
+                    <div class="command-desc">عرض المسار الحالي</div>
+                </div>
+                <div class="command-item" id="mkdir">
+                    <div class="command-name">mkdir</div>
+                    <div class="command-desc">إنشاء مجلد جديد</div>
+                </div>
+                <div class="command-item" id="rmdir">
+                    <div class="command-name">rmdir</div>
+                    <div class="command-desc">حذف مجلد فارغ</div>
+                </div>
+                <div class="command-item" id="touch">
+                    <div class="command-name">touch</div>
+                    <div class="command-desc">إنشاء ملف فارغ أو تحديث تاريخ الملف</div>
+                </div>
+                <div class="command-item" id="cp">
+                    <div class="command-name">cp</div>
+                    <div class="command-desc">نسخ الملفات والمجلدات</div>
+                </div>
+                <div class="command-item" id="mv">
+                    <div class="command-name">mv</div>
+                    <div class="command-desc">نقل أو إعادة تسمية الملفات والمجلدات</div>
+                </div>
+                <div class="command-item" id="rm">
+                    <div class="command-name">rm</div>
+                    <div class="command-desc">حذف الملفات والمجلدات</div>
+                </div>
+                <div class="command-item" id="find">
+                    <div class="command-name">find</div>
+                    <div class="command-desc">البحث عن الملفات والمجلدات بحسب معايير مختلفة</div>
+                </div>
+                <div class="command-item" id="locate">
+                    <div class="command-name">locate</div>
+                    <div class="command-desc">البحث السريع باستعمال قاعدة البيانات المحدثة</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">📄</span>
+                أوامر عرض وتعديل الملفات
+            </h2>
+            <div class="commands-grid">
+                <div class="command-item" id="cat">
+                    <div class="command-name">cat</div>
+                    <div class="command-desc">عرض محتوى الملفات بالكامل</div>
+                </div>
+                <div class="command-item" id="more">
+                    <div class="command-name">more</div>
+                    <div class="command-desc">عرض المحتوى تدريجياً صفحة بصفحة</div>
+                </div>
+                <div class="command-item" id="less">
+                    <div class="command-name">less</div>
+                    <div class="command-desc">عرض المحتوى مع إمكانية البحث والتنقل</div>
+                </div>
+                <div class="command-item" id="head">
+                    <div class="command-name">head</div>
+                    <div class="command-desc">عرض الأسطر الأولى من الملف</div>
+                </div>
+                <div class="command-item" id="tail">
+                    <div class="command-name">tail</div>
+                    <div class="command-desc">عرض الأسطر الأخيرة من الملف</div>
+                </div>
+                <div class="command-item" id="nano">
+                    <div class="command-name">nano</div>
+                    <div class="command-desc">محرر نصوص بسيط وسهل الاستخدام</div>
+                </div>
+                <div class="command-item" id="vim">
+                    <div class="command-name">vim</div>
+                    <div class="command-desc">محرر نصوص قوي ومتقدم</div>
+                </div>
+                <div class="command-item" id="vi">
+                    <div class="command-name">vi</div>
+                    <div class="command-desc">محرر النصوص التقليدي في أنظمة Unix</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🔤</span>
+                أوامر التعامل مع النصوص
+            </h2>
+            <div class="commands-grid">
+                <div class="command-item" id="echo">
+                    <div class="command-name">echo</div>
+                    <div class="command-desc">طباعة النص على الشاشة</div>
+                </div>
+                <div class="command-item" id="wc">
+                    <div class="command-name">wc</div>
+                    <div class="command-desc">عدد الكلمات والأسطر والحروف في الملف</div>
+                </div>
+                <div class="command-item" id="cut">
+                    <div class="command-name">cut</div>
+                    <div class="command-desc">قص أعمدة أو حقول معينة من النص</div>
+                </div>
+                <div class="command-item" id="sort">
+                    <div class="command-name">sort</div>
+                    <div class="command-desc">ترتيب الأسطر أبجدياً أو رقمياً</div>
+                </div>
+                <div class="command-item" id="uniq">
+                    <div class="command-name">uniq</div>
+                    <div class="command-desc">إزالة الأسطر المتكررة</div>
+                </div>
+                <div class="command-item" id="grep">
+                    <div class="command-name">grep</div>
+                    <div class="command-desc">البحث عن نص معين في الملفات</div>
+                </div>
+                <div class="command-item" id="awk">
+                    <div class="command-name">awk</div>
+                    <div class="command-desc">معالجة متقدمة للنصوص والأعمدة</div>
+                </div>
+                <div class="command-item" id="sed">
+                    <div class="command-name">sed</div>
+                    <div class="command-desc">تعديل النصوص (استبدال، حذف، إدراج)</div>
+                </div>
+                <div class="command-item" id="tr">
+                    <div class="command-name">tr</div>
+                    <div class="command-desc">تحويل الأحرف (كبيرة/صغيرة، استبدال)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🔐</span>
+                أوامر الصلاحيات والمِلكية
+            </h2>
+            <div class="commands-grid">
+                <div class="command-item" id="chmod">
+                    <div class="command-name">chmod</div>
+                    <div class="command-desc">تغيير صلاحيات الملفات والمجلدات</div>
+                </div>
+                <div class="command-item" id="chown">
+                    <div class="command-name">chown</div>
+                    <div class="command-desc">تغيير مالك الملف أو المجلد</div>
+                </div>
+                <div class="command-item" id="chgrp">
+                    <div class="command-name">chgrp</div>
+                    <div class="command-desc">تغيير مجموعة الملف أو المجلد</div>
+                </div>
+                <div class="command-item" id="umask">
+                    <div class="command-name">umask</div>
+                    <div class="command-desc">إعداد الصلاحيات الافتراضية للملفات الجديدة</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">👥</span>
+                أوامر إدارة المستخدمين
+            </h2>
+            <div class="commands-grid">
+                <div class="command-item" id="whoami">
+                    <div class="command-name">whoami</div>
+                    <div class="command-desc">عرض اسم المستخدم الحالي</div>
+                </div>
+                <div class="command-item" id="who">
+                    <div class="command-name">who</div>
+                    <div class="command-desc">عرض المستخدمين المتصلين بالنظام</div>
+                </div>
+                <div class="command-item" id="id">
+                    <div class="command-name">id</div>
+                    <div class="command-desc">عرض معرف المستخدم والمجموعة (UID, GID)</div>
+                </div>
+                <div class="command-item" id="adduser">
+                    <div class="command-name">adduser</div>
+                    <div class="command-desc">إضافة مستخدم جديد للنظام</div>
+                </div>
+                <div class="command-item" id="passwd">
+                    <div class="command-name">passwd</div>
+                    <div class="command-desc">تغيير كلمة المرور</div>
+                </div>
+                <div class="command-item" id="su">
+                    <div class="command-name">su</div>
+                    <div class="command-desc">تغيير المستخدم الحالي</div>
+                </div>
+                <div class="command-item" id="sudo">
+                    <div class="command-name">sudo</div>
+                    <div class="command-desc">تنفيذ الأوامر بصلاحيات المدير (root)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">⚙️</span>
+                أوامر إدارة النظام والعمليات
+            </h2>
+            <div class="commands-grid">
+                <div class="command-item" id="ps">
+                    <div class="command-name">ps</div>
+                    <div class="command-desc">عرض العمليات الجارية في النظام</div>
+                </div>
+                <div class="command-item" id="top">
+                    <div class="command-name">top</div>
+                    <div class="command-desc">مراقبة الأداء والعمليات (CPU, RAM)</div>
+                </div>
+                <div class="command-item" id="htop">
+                    <div class="command-name">htop</div>
+                    <div class="command-desc">نسخة متطورة وتفاعلية من top</div>
+                </div>
+                <div class="command-item" id="kill">
+                    <div class="command-name">kill</div>
+                    <div class="command-desc">إنهاء عملية معينة بواسطة PID</div>
+                </div>
+                <div class="command-item" id="killall">
+                    <div class="command-name">killall</div>
+                    <div class="command-desc">إنهاء جميع العمليات بنفس الاسم</div>
+                </div>
+                <div class="command-item" id="uptime">
+                    <div class="command-name">uptime</div>
+                    <div class="command-desc">مدة تشغيل النظام وحمولة المعالج</div>
+                </div>
+                <div class="command-item" id="uname-a">
+                    <div class="command-name">uname -a</div>
+                    <div class="command-desc">معلومات شاملة عن النظام والإصدار</div>
+                </div>
+                <div class="command-item" id="df">
+                    <div class="command-name">df</div>
+                    <div class="command-desc">المساحة المستعملة والفارغة في الأقراص</div>
+                </div>
+                <div class="command-item" id="du">
+                    <div class="command-name">du</div>
+                    <div class="command-desc">حجم الملفات والمجلدات</div>
+                </div>
+                <div class="command-item" id="free">
+                    <div class="command-name">free</div>
+                    <div class="command-desc">عرض استعمال الذاكرة (RAM)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🌐</span>
+                أوامر الشبكة
+            </h2>
+            <div class="commands-grid">
+                <div class="command-item" id="ping">
+                    <div class="command-name">ping</div>
+                    <div class="command-desc">اختبار الاتصال بموقع أو سيرفر</div>
+                </div>
+                <div class="command-item" id="curl">
+                    <div class="command-name">curl</div>
+                    <div class="command-desc">جلب البيانات من URL معين</div>
+                </div>
+                <div class="command-item" id="wget">
+                    <div class="command-name">wget</div>
+                    <div class="command-desc">تحميل الملفات من الإنترنت</div>
+                </div>
+                <div class="command-item" id="ifconfig">
+                    <div class="command-name">ifconfig</div>
+                    <div class="command-desc">عرض وتكوين إعدادات الشبكة</div>
+                </div>
+                <div class="command-item" id="ip-addr">
+                    <div class="command-name">ip addr</div>
+                    <div class="command-desc">الأمر الحديث لعرض إعدادات الشبكة</div>
+                </div>
+                <div class="command-item" id="netstat">
+                    <div class="command-name">netstat</div>
+                    <div class="command-desc">مراقبة المنافذ والاتصالات الشبكية</div>
+                </div>
+                <div class="command-item" id="ssh">
+                    <div class="command-name">ssh</div>
+                    <div class="command-desc">الاتصال الآمن بسيرفر آخر</div>
+                </div>
+                <div class="command-item" id="scp">
+                    <div class="command-name">scp</div>
+                    <div class="command-desc">نقل الملفات بشكل آمن عبر SSH</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">📦</span>
+                أوامر الأرشفة والضغط
+            </h2>
+            <div class="commands-grid">
+                <div class="command-item" id="tar">
+                    <div class="command-name">tar</div>
+                    <div class="command-desc">أرشفة وضغط الملفات والمجلدات</div>
+                </div>
+                <div class="command-item" id="gzip">
+                    <div class="command-name">gzip</div>
+                    <div class="command-desc">ضغط الملفات بصيغة gzip</div>
+                </div>
+                <div class="command-item" id="gunzip">
+                    <div class="command-name">gunzip</div>
+                    <div class="command-desc">فك ضغط ملفات gzip</div>
+                </div>
+                <div class="command-item" id="zip">
+                    <div class="command-name">zip</div>
+                    <div class="command-desc">ضغط الملفات بصيغة zip</div>
+                </div>
+                <div class="command-item" id="unzip">
+                    <div class="command-name">unzip</div>
+                    <div class="command-desc">فك ضغط ملفات zip</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">📥</span>
+                أوامر إدارة الحزم
+            </h2>
+            <div class="commands-grid">
+                <div class="command-item" id="apt-apt-get">
+                    <div class="command-name">apt / apt-get</div>
+                    <div class="command-desc">إدارة الحزم في Debian و Ubuntu</div>
+                </div>
+                <div class="command-item" id="yum-dnf">
+                    <div class="command-name">yum / dnf</div>
+                    <div class="command-desc">إدارة الحزم في Fedora و RedHat</div>
+                </div>
+                <div class="command-item" id="pacman">
+                    <div class="command-name">pacman</div>
+                    <div class="command-desc">إدارة الحزم في Arch Linux</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🔧</span>
+                أوامر أخرى مفيدة
+            </h2>
+            <div class="commands-grid">
+                <div class="command-item" id="history">
+                    <div class="command-name">history</div>
+                    <div class="command-desc">عرض الأوامر المستعملة سابقاً</div>
+                </div>
+                <div class="command-item" id="clear">
+                    <div class="command-name">clear</div>
+                    <div class="command-desc">مسح شاشة الطرفية</div>
+                </div>
+                <div class="command-item" id="alias">
+                    <div class="command-name">alias</div>
+                    <div class="command-desc">إنشاء اختصارات للأوامر الطويلة</div>
+                </div>
+                <div class="command-item" id="man">
+                    <div class="command-name">man</div>
+                    <div class="command-desc">عرض دليل المساعدة التفصيلي لأي أمر</div>
+                </div>
+                <div class="command-item" id="info">
+                    <div class="command-name">info</div>
+                    <div class="command-desc">شرح موسع ومفصل للأوامر</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>💡 Important Tips / نصائح مهمة:</h3>
+            <p>• Use Tab for auto-completion of commands and files / استعمل Tab للإكمال التلقائي</p>
+            <p>• Ctrl+C to stop the current running command / Ctrl+C لإيقاف الأمر الجاري</p>
+            <p>• Ctrl+Z to suspend the process temporarily / Ctrl+Z لتعليق العملية مؤقتاً</p>
+            <p>• Use man before command name to get help / استعمل man للحصول على المساعدة</p>
+            <p>• Be careful with rm -rf especially with root privileges / احذر من rm -rf مع صلاحيات root</p>
+            <br>
+            <div style="margin: 30px 0; padding: 25px; background: rgba(79, 195, 247, 0.1); border-radius: 10px; border: 1px solid rgba(79, 195, 247, 0.3);">
+                <h3 style="color: #4fc3f7; margin-bottom: 15px;">📚 Author Information / معلومات الكاتب</h3>
+                <p style="font-size: 1.1rem; color: #e0e6ed;"><strong>Author:</strong> Abdelghafour Ikbaiss</p>
+                <p style="color: #b0bec5; margin-top: 10px;">This comprehensive Linux commands reference guide has been compiled and organized to serve as a complete resource for Linux users at all levels.</p>
+                <p style="color: #b0bec5;">هذا الدليل الشامل لأوامر Linux تم تجميعه وتنظيمه ليكون مرجعاً كاملاً لمستخدمي Linux في جميع المستويات.</p>
+            </div>
+            <p><strong>🐧 Linux Commands Reference Guide - الدليل الشامل لأوامر Linux</strong></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أوامر إدارة المستخدمين - Linux</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-menu">
+        <div class="dropdown">
+            <button class="dropbtn" onclick="window.location.href='index.html'">🏠 Home</button>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">File Viewing & Editing</button>
+            <div class="dropdown-content">
+                <a href="filescli.html#cat">cat</a>
+                <a href="filescli.html#less">less</a>
+                <a href="filescli.html#more">more</a>
+                <a href="filescli.html#head">head</a>
+                <a href="filescli.html#tail">tail</a>
+                <a href="filescli.html#nano">nano</a>
+                <a href="filescli.html#vim">vim</a>
+                <a href="filescli.html#vi">vi</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Permissions & Ownership</button>
+            <div class="dropdown-content">
+                <a href="permissionscli.html#chmod">chmod</a>
+                <a href="permissionscli.html#chown">chown</a>
+                <a href="permissionscli.html#chgrp">chgrp</a>
+                <a href="permissionscli.html#umask">umask</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">User Management</button>
+            <div class="dropdown-content">
+                <a href="userscli.html#whoami">whoami</a>
+                <a href="userscli.html#who">who</a>
+                <a href="userscli.html#id">id</a>
+                <a href="userscli.html#adduser">adduser</a>
+                <a href="userscli.html#passwd">passwd</a>
+                <a href="userscli.html#su">su</a>
+                <a href="userscli.html#sudo">sudo</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">System & Processes</button>
+            <div class="dropdown-content">
+                <a href="systemcli.html#ps">ps</a>
+                <a href="systemcli.html#top">top</a>
+                <a href="systemcli.html#htop">htop</a>
+                <a href="systemcli.html#kill">kill</a>
+                <a href="systemcli.html#killall">killall</a>
+                <a href="systemcli.html#uptime">uptime</a>
+                <a href="systemcli.html#uname">uname -a</a>
+                <a href="systemcli.html#df">df</a>
+                <a href="systemcli.html#du">du</a>
+                <a href="systemcli.html#free">free</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Network</button>
+            <div class="dropdown-content">
+                <a href="networkcli.html#ping">ping</a>
+                <a href="networkcli.html#curl">curl</a>
+                <a href="networkcli.html#wget">wget</a>
+                <a href="networkcli.html#ifconfig">ifconfig</a>
+                <a href="networkcli.html#ipaddr">ip addr</a>
+                <a href="networkcli.html#netstat">netstat</a>
+                <a href="networkcli.html#ssh">ssh</a>
+                <a href="networkcli.html#scp">scp</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Archiving & Compression</button>
+            <div class="dropdown-content">
+                <a href="archivecli.html#tar">tar</a>
+                <a href="archivecli.html#gzip">gzip</a>
+                <a href="archivecli.html#gunzip">gunzip</a>
+                <a href="archivecli.html#zip">zip</a>
+                <a href="archivecli.html#unzip">unzip</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Packages</button>
+            <div class="dropdown-content">
+                <a href="packagecli.html#apt">apt-get / apt</a>
+                <a href="packagecli.html#yum">yum / dnf</a>
+                <a href="packagecli.html#pacman">pacman</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Other</button>
+            <div class="dropdown-content">
+                <a href="othercli.html#history">history</a>
+                <a href="othercli.html#clear">clear</a>
+                <a href="othercli.html#alias">alias</a>
+                <a href="othercli.html#man">man</a>
+                <a href="othercli.html#info">info</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>👤 أوامر إدارة المستخدمين</h1>
+            <p>User Management Commands</p>
+        </div>
+
+        <div class="command-item" id="whoami">
+            <div class="command-header">
+                <div class="command-name">whoami</div>
+                <div class="command-type">معلومات</div>
+            </div>
+            <div class="command-desc">عرض اسم المستخدم الحالي - Show current username</div>
+            <div class="command-syntax">whoami</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">whoami</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="who">
+            <div class="command-header">
+                <div class="command-name">who</div>
+                <div class="command-type">معلومات</div>
+            </div>
+            <div class="command-desc">عرض المستخدمين المتصلين حالياً - Show logged in users</div>
+            <div class="command-syntax">who</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">who</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="id">
+            <div class="command-header">
+                <div class="command-name">id</div>
+                <div class="command-type">معلومات</div>
+            </div>
+            <div class="command-desc">عرض UID, GID والمجموعات - Show UID, GID, groups</div>
+            <div class="command-syntax">id [USER]</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">id</div>
+                <div class="example-item">id username</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="adduser">
+            <div class="command-header">
+                <div class="command-name">adduser</div>
+                <div class="command-type">إدارة</div>
+            </div>
+            <div class="command-desc">إضافة مستخدم جديد للنظام - Add a new user</div>
+            <div class="command-syntax">adduser [OPTIONS] USERNAME</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">sudo adduser newuser</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="passwd">
+            <div class="command-header">
+                <div class="command-name">passwd</div>
+                <div class="command-type">إدارة</div>
+            </div>
+            <div class="command-desc">تغيير كلمة مرور المستخدم - Change user password</div>
+            <div class="command-syntax">passwd [USER]</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">passwd</div>
+                <div class="example-item">sudo passwd username</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="su">
+            <div class="command-header">
+                <div class="command-name">su</div>
+                <div class="command-type">إدارة</div>
+            </div>
+            <div class="command-desc">تبديل المستخدم الحالي - Switch user</div>
+            <div class="command-syntax">su [USER]</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">su</div>
+                <div class="example-item">su username</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="sudo">
+            <div class="command-header">
+                <div class="command-name">sudo</div>
+                <div class="command-type">إدارة</div>
+            </div>
+            <div class="command-desc">تنفيذ أمر بصلاحيات root - Run command as root</div>
+            <div class="command-syntax">sudo [COMMAND]</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">sudo apt update</div>
+                <div class="example-item">sudo reboot</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

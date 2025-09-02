@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أوامر إدارة النظام و العمليات - Linux</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-menu">
+        <div class="dropdown">
+            <button class="dropbtn" onclick="window.location.href='index.html'">🏠 Home</button>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">File Viewing & Editing</button>
+            <div class="dropdown-content">
+                <a href="filescli.html#cat">cat</a>
+                <a href="filescli.html#less">less</a>
+                <a href="filescli.html#more">more</a>
+                <a href="filescli.html#head">head</a>
+                <a href="filescli.html#tail">tail</a>
+                <a href="filescli.html#nano">nano</a>
+                <a href="filescli.html#vim">vim</a>
+                <a href="filescli.html#vi">vi</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Permissions & Ownership</button>
+            <div class="dropdown-content">
+                <a href="permissionscli.html#chmod">chmod</a>
+                <a href="permissionscli.html#chown">chown</a>
+                <a href="permissionscli.html#chgrp">chgrp</a>
+                <a href="permissionscli.html#umask">umask</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">User Management</button>
+            <div class="dropdown-content">
+                <a href="userscli.html#whoami">whoami</a>
+                <a href="userscli.html#who">who</a>
+                <a href="userscli.html#id">id</a>
+                <a href="userscli.html#adduser">adduser</a>
+                <a href="userscli.html#passwd">passwd</a>
+                <a href="userscli.html#su">su</a>
+                <a href="userscli.html#sudo">sudo</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">System & Processes</button>
+            <div class="dropdown-content">
+                <a href="systemcli.html#ps">ps</a>
+                <a href="systemcli.html#top">top</a>
+                <a href="systemcli.html#htop">htop</a>
+                <a href="systemcli.html#kill">kill</a>
+                <a href="systemcli.html#killall">killall</a>
+                <a href="systemcli.html#uptime">uptime</a>
+                <a href="systemcli.html#uname">uname -a</a>
+                <a href="systemcli.html#df">df</a>
+                <a href="systemcli.html#du">du</a>
+                <a href="systemcli.html#free">free</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Network</button>
+            <div class="dropdown-content">
+                <a href="networkcli.html#ping">ping</a>
+                <a href="networkcli.html#curl">curl</a>
+                <a href="networkcli.html#wget">wget</a>
+                <a href="networkcli.html#ifconfig">ifconfig</a>
+                <a href="networkcli.html#ipaddr">ip addr</a>
+                <a href="networkcli.html#netstat">netstat</a>
+                <a href="networkcli.html#ssh">ssh</a>
+                <a href="networkcli.html#scp">scp</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Archiving & Compression</button>
+            <div class="dropdown-content">
+                <a href="archivecli.html#tar">tar</a>
+                <a href="archivecli.html#gzip">gzip</a>
+                <a href="archivecli.html#gunzip">gunzip</a>
+                <a href="archivecli.html#zip">zip</a>
+                <a href="archivecli.html#unzip">unzip</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Packages</button>
+            <div class="dropdown-content">
+                <a href="packagecli.html#apt">apt-get / apt</a>
+                <a href="packagecli.html#yum">yum / dnf</a>
+                <a href="packagecli.html#pacman">pacman</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Other</button>
+            <div class="dropdown-content">
+                <a href="othercli.html#history">history</a>
+                <a href="othercli.html#clear">clear</a>
+                <a href="othercli.html#alias">alias</a>
+                <a href="othercli.html#man">man</a>
+                <a href="othercli.html#info">info</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>🖥️ أوامر إدارة النظام و العمليات</h1>
+            <p>System & Process Management Commands</p>
+        </div>
+
+        <div class="command-item" id="ps">
+            <div class="command-header">
+                <div class="command-name">ps</div>
+                <div class="command-type">عمليات</div>
+            </div>
+            <div class="command-desc">عرض العمليات الجارية - Show running processes</div>
+            <div class="command-syntax">ps [OPTIONS]</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">ps aux</div>
+                <div class="example-item">ps -ef</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="top">
+            <div class="command-header">
+                <div class="command-name">top</div>
+                <div class="command-type">مراقبة</div>
+            </div>
+            <div class="command-desc">مراقبة الأداء (CPU, RAM) - Monitor system performance</div>
+            <div class="command-syntax">top</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">top</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="htop">
+            <div class="command-header">
+                <div class="command-name">htop</div>
+                <div class="command-type">مراقبة</div>
+            </div>
+            <div class="command-desc">نسخة متطورة من top - Advanced interactive process viewer</div>
+            <div class="command-syntax">htop</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">htop</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="kill">
+            <div class="command-header">
+                <div class="command-name">kill</div>
+                <div class="command-type">عمليات</div>
+            </div>
+            <div class="command-desc">إنهاء عملية باستخدام PID - Kill process by PID</div>
+            <div class="command-syntax">kill [OPTIONS] PID</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">kill 1234</div>
+                <div class="example-item">kill -9 1234</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="killall">
+            <div class="command-header">
+                <div class="command-name">killall</div>
+                <div class="command-type">عمليات</div>
+            </div>
+            <div class="command-desc">إنهاء جميع العمليات بنفس الاسم - Kill all processes by name</div>
+            <div class="command-syntax">killall [OPTIONS] NAME</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">killall firefox</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="uptime">
+            <div class="command-header">
+                <div class="command-name">uptime</div>
+                <div class="command-type">معلومات</div>
+            </div>
+            <div class="command-desc">مدة تشغيل النظام - Show system uptime</div>
+            <div class="command-syntax">uptime</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">uptime</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="uname">
+            <div class="command-header">
+                <div class="command-name">uname -a</div>
+                <div class="command-type">معلومات</div>
+            </div>
+            <div class="command-desc">معلومات النظام - Show system information</div>
+            <div class="command-syntax">uname -a</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">uname -a</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="df">
+            <div class="command-header">
+                <div class="command-name">df</div>
+                <div class="command-type">مساحة</div>
+            </div>
+            <div class="command-desc">عرض المساحة المستعملة والفارغة - Show disk usage</div>
+            <div class="command-syntax">df [OPTIONS]</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">df -h</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="du">
+            <div class="command-header">
+                <div class="command-name">du</div>
+                <div class="command-type">مساحة</div>
+            </div>
+            <div class="command-desc">عرض حجم الملفات/المجلدات - Show file/folder size</div>
+            <div class="command-syntax">du [OPTIONS] [PATH]</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">du -sh *</div>
+                <div class="example-item">du -h /home/user</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="free">
+            <div class="command-header">
+                <div class="command-name">free</div>
+                <div class="command-type">ذاكرة</div>
+            </div>
+            <div class="command-desc">عرض الرام المستعملة - Show RAM usage</div>
+            <div class="command-syntax">free [OPTIONS]</div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">free -h</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

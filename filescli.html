@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أوامر عرض وتعديل الملفات - Linux</title>
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="main-menu">
+        <div class="dropdown">
+            <button class="dropbtn" onclick="window.location.href='index.html'">🏠 Home</button>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">File Viewing & Editing</button>
+            <div class="dropdown-content">
+                <a href="filescli.html#cat">cat</a>
+                <a href="filescli.html#less">less</a>
+                <a href="filescli.html#more">more</a>
+                <a href="filescli.html#head">head</a>
+                <a href="filescli.html#tail">tail</a>
+                <a href="filescli.html#nano">nano</a>
+                <a href="filescli.html#vim">vim</a>
+                <a href="filescli.html#vi">vi</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Permissions & Ownership</button>
+            <div class="dropdown-content">
+                <a href="permissionscli.html#chmod">chmod</a>
+                <a href="permissionscli.html#chown">chown</a>
+                <a href="permissionscli.html#chgrp">chgrp</a>
+                <a href="permissionscli.html#umask">umask</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">User Management</button>
+            <div class="dropdown-content">
+                <a href="userscli.html#whoami">whoami</a>
+                <a href="userscli.html#who">who</a>
+                <a href="userscli.html#id">id</a>
+                <a href="userscli.html#adduser">adduser</a>
+                <a href="userscli.html#passwd">passwd</a>
+                <a href="userscli.html#su">su</a>
+                <a href="userscli.html#sudo">sudo</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">System & Processes</button>
+            <div class="dropdown-content">
+                <a href="systemcli.html#ps">ps</a>
+                <a href="systemcli.html#top">top</a>
+                <a href="systemcli.html#htop">htop</a>
+                <a href="systemcli.html#kill">kill</a>
+                <a href="systemcli.html#killall">killall</a>
+                <a href="systemcli.html#uptime">uptime</a>
+                <a href="systemcli.html#uname">uname -a</a>
+                <a href="systemcli.html#df">df</a>
+                <a href="systemcli.html#du">du</a>
+                <a href="systemcli.html#free">free</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Network</button>
+            <div class="dropdown-content">
+                <a href="networkcli.html#ping">ping</a>
+                <a href="networkcli.html#curl">curl</a>
+                <a href="networkcli.html#wget">wget</a>
+                <a href="networkcli.html#ifconfig">ifconfig</a>
+                <a href="networkcli.html#ipaddr">ip addr</a>
+                <a href="networkcli.html#netstat">netstat</a>
+                <a href="networkcli.html#ssh">ssh</a>
+                <a href="networkcli.html#scp">scp</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Archiving & Compression</button>
+            <div class="dropdown-content">
+                <a href="archivecli.html#tar">tar</a>
+                <a href="archivecli.html#gzip">gzip</a>
+                <a href="archivecli.html#gunzip">gunzip</a>
+                <a href="archivecli.html#zip">zip</a>
+                <a href="archivecli.html#unzip">unzip</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Packages</button>
+            <div class="dropdown-content">
+                <a href="packagecli.html#apt">apt-get / apt</a>
+                <a href="packagecli.html#yum">yum / dnf</a>
+                <a href="packagecli.html#pacman">pacman</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Other</button>
+            <div class="dropdown-content">
+                <a href="othercli.html#history">history</a>
+                <a href="othercli.html#clear">clear</a>
+                <a href="othercli.html#alias">alias</a>
+                <a href="othercli.html#man">man</a>
+                <a href="othercli.html#info">info</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>📄 أوامر عرض وتعديل الملفات</h1>
+            <p>File Viewing & Editing Commands</p>
+        </div>
+
+        <div class="command-item" id="cat">
+            <div class="command-header">
+                <div class="command-name">cat</div>
+                <div class="command-type">عرض</div>
+            </div>
+            <div class="command-desc">عرض محتوى الملفات بالكامل - Display complete file content</div>
+            <div class="command-syntax">cat [OPTIONS] [FILE...]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item" id="cat-option-n">
+                        <div class="option-flag">-n</div>
+                        <div class="option-desc">ترقيم جميع الأسطر</div>
+                    </div>
+                    <div class="option-item" id="cat-option-b">
+                        <div class="option-flag">-b</div>
+                        <div class="option-desc">ترقيم الأسطر غير الفارغة فقط</div>
+                    </div>
+                    <div class="option-item" id="cat-option-A">
+                        <div class="option-flag">-A</div>
+                        <div class="option-desc">عرض جميع الرموز الخاصة والمخفية</div>
+                    </div>
+                    <div class="option-item" id="cat-option-s">
+                        <div class="option-flag">-s</div>
+                        <div class="option-desc">ضغط الأسطر الفارغة المتعددة لسطر واحد</div>
+                    </div>
+                    <div class="option-item" id="cat-option-E">
+                        <div class="option-flag">-E</div>
+                        <div class="option-desc">عرض رمز $ في نهاية كل سطر</div>
+                    </div>
+                    <div class="option-item" id="cat-option-T">
+                        <div class="option-flag">-T</div>
+                        <div class="option-desc">عرض رموز التبويب كـ ^I</div>
+                    </div>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">cat -n /etc/passwd</div>
+                <div class="example-item">cat file1.txt file2.txt > combined.txt</div>
+                <div class="example-item">cat -A special_chars.txt</div>
+                <div class="example-item">cat -s long_file.txt | less</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="less">
+            <div class="command-header">
+                <div class="command-name">less</div>
+                <div class="command-type">عرض</div>
+            </div>
+            <div class="command-desc">عرض الملفات مع إمكانية التنقل والبحث - Interactive file viewer</div>
+            <div class="command-syntax">less [OPTIONS] [FILE]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-N</div>
+                        <div class="option-desc">عرض أرقام الأسطر</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-S</div>
+                        <div class="option-desc">قطع الأسطر الطويلة (عدم التفاف)</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-i</div>
+                        <div class="option-desc">تجاهل حالة الأحرف في البحث</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-I</div>
+                        <div class="option-desc">تجاهل حالة الأحرف نهائياً</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">+G</div>
+                        <div class="option-desc">البدء من نهاية الملف</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-F</div>
+                        <div class="option-desc">الخروج إذا كان الملف يتسع في شاشة واحدة</div>
+                    </div>
+                </div>
+            </div>
+            <div class="keyboard-shortcuts">
+                <div class="shortcuts-title">اختصارات لوحة المفاتيح داخل less:</div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">Space</span> أو <span class="shortcut-key">f</span></span>
+                    <span>الصفحة التالية</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">b</span></span>
+                    <span>الصفحة السابقة</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">/text</span></span>
+                    <span>البحث عن نص</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">n</span></span>
+                    <span>النتيجة التالية</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">N</span></span>
+                    <span>النتيجة السابقة</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">q</span></span>
+                    <span>الخروج</span>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">less -N /var/log/syslog</div>
+                <div class="example-item">less +G large_file.txt</div>
+                <div class="example-item">ps aux | less</div>
+                <div class="example-item">less -S wide_data.csv</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="more">
+            <div class="command-header">
+                <div class="command-name">more</div>
+                <div class="command-type">عرض</div>
+            </div>
+            <div class="command-desc">عرض المحتوى تدريجياً صفحة بصفحة - Simple page viewer</div>
+            <div class="command-syntax">more [OPTIONS] [FILE]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-d</div>
+                        <div class="option-desc">عرض رسائل مساعدة للمستخدم</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-f</div>
+                        <div class="option-desc">عدد الأسطر بدلاً من الحجم الفعلي</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-p</div>
+                        <div class="option-desc">عدم التمرير، مسح الشاشة بدلاً من ذلك</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-s</div>
+                        <div class="option-desc">ضغط الأسطر الفارغة المتعددة</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-u</div>
+                        <div class="option-desc">منع التسطير</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">+num</div>
+                        <div class="option-desc">البدء من السطر رقم num</div>
+                    </div>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">more /etc/services</div>
+                <div class="example-item">more +50 large_file.txt</div>
+                <div class="example-item">ls -la | more</div>
+                <div class="example-item">more -s text_with_blanks.txt</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="head">
+            <div class="command-header">
+                <div class="command-name">head</div>
+                <div class="command-type">عرض</div>
+            </div>
+            <div class="command-desc">عرض الأسطر الأولى من الملف - Display first lines of file</div>
+            <div class="command-syntax">head [OPTIONS] [FILE]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-n NUM</div>
+                        <div class="option-desc">عدد الأسطر المراد عرضها (افتراضي: 10)</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-c NUM</div>
+                        <div class="option-desc">عدد البايتات المراد عرضها</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-v</div>
+                        <div class="option-desc">عرض اسم الملف دائماً</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-q</div>
+                        <div class="option-desc">عدم عرض اسم الملف أبداً</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-f</div>
+                        <div class="option-desc">متابعة نمو الملف (مثل tail -f)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">head -n 5 /etc/passwd</div>
+                <div class="example-item">head -c 100 binary_file</div>
+                <div class="example-item">head -v *.txt</div>
+                <div class="example-item">head -20 /var/log/messages</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="tail">
+            <div class="command-header">
+                <div class="command-name">tail</div>
+                <div class="command-type">عرض</div>
+            </div>
+            <div class="command-desc">عرض الأسطر الأخيرة من الملف - Display last lines of file</div>
+            <div class="command-syntax">tail [OPTIONS] [FILE]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-n NUM</div>
+                        <div class="option-desc">عدد الأسطر المراد عرضها (افتراضي: 10)</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-f</div>
+                        <div class="option-desc">متابعة نمو الملف في الوقت الفعلي</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-F</div>
+                        <div class="option-desc">متابعة حتى لو تم إعادة إنشاء الملف</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-c NUM</div>
+                        <div class="option-desc">عدد البايتات المراد عرضها</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-v</div>
+                        <div class="option-desc">عرض اسم الملف دائماً</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-q</div>
+                        <div class="option-desc">عدم عرض اسم الملف أبداً</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">--retry</div>
+                        <div class="option-desc">إعادة المحاولة إذا لم يكن الملف متاحاً</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-s NUM</div>
+                        <div class="option-desc">فترة التحديث بالثواني (مع -f)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">tail -f /var/log/syslog</div>
+                <div class="example-item">tail -n 50 /var/log/apache2/access.log</div>
+                <div class="example-item">tail -c 200 data_file.bin</div>
+                <div class="example-item">tail -F /var/log/application.log</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="nano">
+            <div class="command-header">
+                <div class="command-name">nano</div>
+                <div class="command-type">تحرير</div>
+            </div>
+            <div class="command-desc">محرر نصوص بسيط وسهل الاستخدام - Simple text editor</div>
+            <div class="command-syntax">nano [OPTIONS] [FILE]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-l</div>
+                        <div class="option-desc">عرض أرقام الأسطر</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-m</div>
+                        <div class="option-desc">تفعيل دعم الماوس</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-i</div>
+                        <div class="option-desc">التبويب التلقائي للأسطر الجديدة</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-w</div>
+                        <div class="option-desc">عدم التفاف الأسطر الطويلة</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-x</div>
+                        <div class="option-desc">عدم عرض شريط المساعدة</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-E</div>
+                        <div class="option-desc">تحويل التبويبات إلى مسافات</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-S</div>
+                        <div class="option-desc">تفعيل التمرير السلس</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">+NUM</div>
+                        <div class="option-desc">البدء من السطر رقم NUM</div>
+                    </div>
+                </div>
+            </div>
+            <div class="keyboard-shortcuts">
+                <div class="shortcuts-title">اختصارات nano الأساسية:</div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">Ctrl+O</span></span>
+                    <span>حفظ الملف</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">Ctrl+X</span></span>
+                    <span>الخروج</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">Ctrl+W</span></span>
+                    <span>البحث</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">Ctrl+K</span></span>
+                    <span>قص السطر</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">Ctrl+U</span></span>
+                    <span>لصق</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">Ctrl+G</span></span>
+                    <span>المساعدة</span>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">nano -l script.py</div>
+                <div class="example-item">nano -w /etc/hosts</div>
+                <div class="example-item">nano +25 large_file.txt</div>
+                <div class="example-item">nano -m -i config.conf</div>
+            </div>
+        </div>
+
+        <div class="command-item" id="vim">
+            <div class="command-header">
+                <div class="command-name">vim</div>
+                <div class="command-type">تحرير</div>
+            </div>
+            <div class="command-desc">محرر نصوص قوي ومتقدم - Advanced text editor</div>
+            <div class="command-syntax">vim [OPTIONS] [FILE]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-r</div>
+                        <div class="option-desc">استعادة ملف من نسخة احتياطية</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-R</div>
+                        <div class="option-desc">فتح في وضع القراءة فقط</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-n</div>
+                        <div class="option-desc">عدم استخدام ملف swap</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-o</div>
+                        <div class="option-desc">فتح الملفات في نوافذ أفقية</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-O</div>
+                        <div class="option-desc">فتح الملفات في نوافذ عمودية</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-u FILE</div>
+                        <div class="option-desc">استخدام ملف إعدادات مخصص</div>
+                    </div>
+                </div>
+            </div>
+            <div class="keyboard-shortcuts">
+                <div class="shortcuts-title">أوامر vim الأساسية:</div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">i</span></span>
+                    <span>دخول وضع الإدخال</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">:w</span></span>
+                    <span>حفظ الملف</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">:q</span></span>
+                    <span>الخروج</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">:wq</span></span>
+                    <span>حفظ والخروج</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">dd</span></span>
+                    <span>حذف السطر الحالي</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">u</span></span>
+                    <span>تراجع</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">/text</span></span>
+                    <span>بحث عن نص</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">:help</span></span>
+                    <span>المساعدة</span>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">vim file.txt</div>
+                <div class="example-item">vim -R readonly.txt</div>
+                <div class="example-item">vim -o file1.txt file2.txt</div>
+                <div class="example-item">vim -u custom_vimrc file.txt</div>
+            </div>
+        </div>
+
+        <!-- vi section -->
+        <div class="command-item" id="vi">
+            <div class="command-header">
+                <div class="command-name">vi</div>
+                <div class="command-type">تحرير</div>
+            </div>
+            <div class="command-desc">محرر نصوص تقليدي في أنظمة يونكس - Traditional Unix text editor</div>
+            <div class="command-syntax">vi [OPTIONS] [FILE]</div>
+            <div class="options-section">
+                <div class="options-title">الخيارات المتاحة:</div>
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-flag">-R</div>
+                        <div class="option-desc">فتح في وضع القراءة فقط</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">-r</div>
+                        <div class="option-desc">استعادة ملف من نسخة احتياطية</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-flag">+NUM</div>
+                        <div class="option-desc">البدء من السطر رقم NUM</div>
+                    </div>
+                </div>
+            </div>
+            <div class="keyboard-shortcuts">
+                <div class="shortcuts-title">أوامر vi الأساسية:</div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">i</span></span>
+                    <span>دخول وضع الإدخال</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">:w</span></span>
+                    <span>حفظ الملف</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">:q</span></span>
+                    <span>الخروج</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">:wq</span></span>
+                    <span>حفظ والخروج</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">dd</span></span>
+                    <span>حذف السطر الحالي</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">u</span></span>
+                    <span>تراجع</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">/text</span></span>
+                    <span>بحث عن نص</span>
+                </div>
+                <div class="shortcut-item">
+                    <span><span class="shortcut-key">:help</span></span>
+                    <span>المساعدة</span>
+                </div>
+            </div>
+            <div class="examples">
+                <div class="examples-title">أمثلة عملية:</div>
+                <div class="example-item">vi file.txt</div>
+                <div class="example-item">vi +10 notes.txt</div>
+                <div class="example-item">vi -R readonly.txt</div>
+                <div class="example-item">vi -r recovered.txt</div>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll Up Button -->
+    <button id="scrollUpBtn" title="Scroll to top" style="display:none;position:fixed;bottom:30px;left:30px;z-index:99;font-size:18px;padding:10px 16px;border:none;border-radius:50%;background:#333;color:#fff;cursor:pointer;">↑</button>
+    <script>
+        // Show button when scrolling down
+        window.onscroll = function() {
+            document.getElementById("scrollUpBtn").style.display =
+                (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) ? "block" : "none";
+        };
+        // Scroll to top on click
+        document.getElementById("scrollUpBtn").onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+    </script>
+</body>
+</html>
